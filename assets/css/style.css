@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Cantarell:700);
-@import url(http://weloveiconfonts.com/api/?family=entypo|fontawesome);
+@import url(https://weloveiconfonts.com/api/?family=entypo|fontawesome);
 /* entypo */
 [class*=entypo-]:before {
   font-family: "entypo", sans-serif;
