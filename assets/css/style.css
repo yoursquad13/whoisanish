@@ -157,7 +157,7 @@ img {
   ****************************/
 }
 .desktop .background-image {
-  background-image: url("../img/back.jpg");
+  background-image: url("../img/back.jpg?anish");
   background-size: cover;
   width: 100%;
   height: 100vh;
