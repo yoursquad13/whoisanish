@@ -124,8 +124,9 @@
     var time = d.toLocaleString();
     $('.time').text(time);
   }, 1000);
-  if($(window).width() < 1000){
+  if($(window).width() < 800){
     alert("Please open this website in your PC or bigger screen device for better experience.");
+    $('.ui-draggable').css({'left':'73px','width':'calc(100vw - 74px)'});
   }
    $(window).load(function() {
     $('#preload').fadeOut('slow');
