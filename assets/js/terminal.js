@@ -6,7 +6,8 @@ initialSection.innerHTML = initialPrompt;
 let inputField = document.querySelector("#userInput");
 let outputField = document.querySelectorAll(".systemOutput");
 
-let keepValue = inputField.value;
+let keepValue = inputField.value.split(' ')[0];
+
 
 const terminalCommands = {
     "help": "Use commands like <strong>whois</strong>,<strong>whoami</strong>, <strong>intro</strong>, <strong>about</strong>, <strong>age</strong>, <strong>birthday</strong>, <strong>address</strong>, <strong>education</strong>, <strong>hobbies</strong>, <strong>skills</strong>, <strong>career</strong>, <strong>achievements</strong>, <strong>profession</strong>, <strong>company</strong>, <strong>resume</strong>, <strong>email</strong>, <strong>phone</strong>, <strong>social</strong>, <strong>form</strong>, <strong>font</strong>, and some other system commands!",
@@ -19,11 +20,11 @@ const terminalCommands = {
 
     "age": "Twenty (20)",
     "birthday": "January 09, 2002",
-    "address": "Address Line 1: Bharatpur-9, Milanchowk, Chitwan<br>Address Line 2: Jyotish Karyalaya, MC9R+HW Bharatpur<br>City: Bharatpur<br>Province: Bagmati Pradesh<br>ZIP Code: 44200<br>Country: Nepal",
+    "address": "Address Line 1: Ratopool-02, <br>City: Dhangadhi, <br>District: Kailali<br>>Province: SudurPaschim<br>ZIP Code: 10900<br>Country: Nepal",
 
-    "education": "<p>Studying BSc. HONS Computing at <a onclick=\"window.open('http://islingtoncollege.edu.np', '_blank')\">Islington College</a>, affiliated to <a onclick=\"window.open('http://pu.edu.np', '_blank')\">London Metropolitan University</a>, UK!</p>Find about my education in detail in my website, by <a href='https://anishkhatri.com/#resume' target='_blank'>clicking here</a>",
+    "education": "<p>Studying BSc. HONS Computing at <a onclick=\"window.open('http://islingtoncollege.edu.np', '_blank')\">Islington College</a>, affiliated to <a onclick=\"window.open('https://www.londonmet.ac.uk/', '_blank')\">London Metropolitan University</a>, UK!</p>Find about my education in detail in my website, by <a href='https://anishkhatri.com/#resume' target='_blank'>clicking here</a>",
 
-    "hobbies": "Reading research papers, documentations and RFCs; playing CTFs; doing SysAdmin and DevSecOps stuffs; developing security automation tools; and contributing to <strong><a onclick=\"window.open('https://www.facebook.com/groups/askbuddie', '_blank')\">Ask Buddie</a></strong>, a Technology community, as a Community Administrator!",
+    "hobbies": "Reading research papers, documentations and RFCs; playing CTFs; doing SysAdmin and DevSecOps stuffs; developing security automation tools;",
 
     "skills": "<ul><li>Web development,</li><li>Web application penetration testing,</li><li>Web programming with HTML5, CSS3, JavaScript, PHP and MySQL,</li><li>Linux/UNIX (RedHat, Debian, Fedora) and Microsoft Windows System and Server administration,</li><li>Scripting in Bash, Batch, PowerShell and Python,</li><li>Programming in C, C++ and Python,</li><li>Networking and Network Administration,</li><li>Reverse Engineering and Social Engineering.</li></ul>",
 
@@ -51,7 +52,17 @@ const terminalCommands = {
     "ls": "<p>assets/<br>anish.webmanifest<br>index.html<br>terminal.html<br>.htaccess",
     "sudo": "This isn't a UNIX-based Operating System.",
     "cd": "You aren't allowed you to change directories.",
-    "rm": "Before running this command, make sure you know that the web front-end can't perform actions in the server."
+    "man": "You aren't allowed you to use this command.",
+    "sudo": "You aren't allowed you to use this command.",
+    "cat": "You aren't allowed you to use this command.",
+    "chmod": "You aren't allowed you to use this command.",
+    "touch": "You aren't allowed you to use this command.",
+    "locate": "You aren't allowed you to use this command.",
+    "curl": "You aren't allowed you to use this command.",
+    "echo": "You aren't allowed you to use this command.",
+    "ping": "You aren't allowed you to use this command.",
+    "rm": "You aren't allowed you to use this command.",
+    "haha": "Before running this command, make sure you know that the web front-end can't perform actions in the server."
 }
 
 Object.assign(terminalCommands, {
