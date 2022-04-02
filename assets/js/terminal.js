@@ -1,12 +1,12 @@
 const initialSection = document.querySelector("#initial");
 
-const initialPrompt = '<span class="prompt">----(<span style="color:#4293dc;">anish@linux</span>)-[<span style="color:#c6c6c6;">~/WHOISanish</span>]</span><br><span style="color: #67deb2;font-size: bolder;">|--<span style="color:#408ed4;">$</span> </span><input type="text" id="userInput" placeholder="Type a command! Help to list usable commands" autofocus="" style="width:70%" autocomplete="off"><br><div class="systemOutput"></div>';
+const initialPrompt = '<span class="prompt">----(<span style="color:#4293dc;">anish@linux</span>)-[<span style="color:#c6c6c6;">~/WHOISanish</span>]</span><br><span style="color: #67deb2;font-size: bolder;">|--<span style="color:#408ed4;">$</span> </span><input type="text" id="userInput" placeholder="Type a command! \'Help\' to list usable commands" autofocus="" style="width:70%" autocomplete="off"><br><div class="systemOutput"></div>';
 initialSection.innerHTML = initialPrompt;
 
 let inputField = document.querySelector("#userInput");
 let outputField = document.querySelectorAll(".systemOutput");
 
-let keepValue = inputField.value.split(' ')[0];
+let keepValue = inputField.value;
 
 
 const terminalCommands = {
@@ -14,11 +14,11 @@ const terminalCommands = {
 
     "whoami": "<strong>Anish Khatri<strong> (WHOISanish)",
 
-    "intro": "Full-stack Web Development and Web/Network Penetration Testing enthusiast with an experience of over 12 years in the field of Technology, with deep enthusiasm towards Development, Security, Networking, SysAdmin, Server Administration and Cloud Computing.",
+    "intro": "Full-stack Web Development and Web Penetration Testing enthusiast with an experience of over 5 years in the field of Technology, with deep enthusiasm towards Development, Security, Networking, SysAdmin, Server Administration and Cloud Computing.",
 
     "about": "Hi! I am <strong>Anish Khatri</strong>.<br>I am a Tech Enthusiastic full-stack web developer, programmer and web penetration tester from Nepal.<br> Check out <a href='https://anishkhatri.com' target='_blank'>anishkhatri.com</a> to know more.",
 
-    "age": "Twenty (20)",
+    "age": "Twenty One (21)",
     "birthday": "January 09, 2002",
     "address": "Address Line 1: Ratopool-02, <br>City: Dhangadhi, <br>District: Kailali<br>>Province: SudurPaschim<br>ZIP Code: 10900<br>Country: Nepal",
 
