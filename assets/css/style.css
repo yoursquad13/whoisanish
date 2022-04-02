@@ -9,17 +9,6 @@
 [class*=fontawesome-]:before {
   font-family: "FontAwesome", sans-serif;
 }
-
-/*****************************
-****** Z-INDEX BREAKDOWN *****
-*****************************/
-/* Layer 0: Desktop lvl */
-/* Layer 1: Windows lvl */
-/* Layer 2: grid lvl */
-/* Layer 3: tooltips lvl */
-/*****************
-****** SETUP *****
-*****************/
 * {
   margin: 0;
 }
@@ -177,11 +166,12 @@ img {
   cursor: default;
   height: 30px;
   vertical-align: top;
+  border-bottom:solid 1px #2d2d2d;
 }
 .desktop .action-bar .float-right {
   float: right;
   line-height: 0px;
-  margin-top: -8px;
+  margin-top: 7px;
   margin-right: 5px;
 }
 .desktop .action-bar .float-center {
