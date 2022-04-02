@@ -23,9 +23,6 @@ html, body {
   font-weight: normal;
 }
 
-/**************************
-****** SWITCHER LAYER *****
-**************************/
 .grid-layer {
   display: -webkit-box;
   display: flex;
@@ -74,22 +71,6 @@ img {
   padding: 0;
 }
 
-.nautilus-app {
-  background-image: url("https://lh3.googleusercontent.com/AwObblGoJgCi0XvEG6c8HRTYFO4krwvV9WYgIK76v8aa=w960-h878-no");
-}
-
-.chrome-app {
-  background-image: url("http://makegooglemyhomepage.org/wp-content/uploads/2014/06/How-To-Make-Google-Your-Homepage-With-Google-Chrome.png");
-}
-
-.software-center-app {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/7a/Ubuntu_Software_Center_en_Ubuntu_12.04.png");
-}
-
-.calculator-app {
-  background-image: url("http://screenshots.ubuntu.com/screenshots/g/gcalctool/9099_large.png");
-}
-
 .app {
   display: inline-block;
   margin: 0;
@@ -131,19 +112,13 @@ img {
   zoom: 50%;
 }
 
-/*************************
-****** DESKTOP LAYER *****
-*************************/
+
 .desktop {
   height: 100vh;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0);
-  /**********************
-  ****** ACTION BAR *****
-  **********************/
-  /****************************
-  ****** APPLICATION DOCK *****
-  ****************************/
+
+  
 }
 .desktop .background-image {
   background-image: url("../img/back.jpg?anish");
@@ -297,13 +272,4 @@ img {
 }
 .desktop .dock .icon.email {
   background-image: url("../img/icons/email.png");
-}
-
-
-.hot-spot {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 10px;
-  height: 10px;
 }
