@@ -151,7 +151,7 @@ const eventListener = () => {
             inputField.removeAttribute("id");
             if(keepValue.toLowerCase() == "clear" || keepValue.toLowerCase() == "cls") initialSection.innerHTML = initialPrompt;
             else {
-                let systemOutput = executeCommand(keepValue.toLowerCase());
+                let systemOutput = executeCommand(keepValue.split(' ')[0].toLowerCase());
                 outputField[outputField.length - 1].innerHTML = systemOutput;
                 initialSection.innerHTML += "<br />" + initialPrompt;
             }
