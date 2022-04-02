@@ -3,15 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <title>Home - WHOISanish</title>
-  <link rel="stylesheet" href="./assets/css/style.css?anish">
   <meta name="description" content="I am a tireless seeker of knowledge, occassional purveyor of wisdom and also, coincidentally, a Web Developer.">
   <meta name="keywords" content="vcard, resposnive, retina, resume, jquery, css3, bootstrap, Material CV, portfolio,ubuntu,linux,hacker">
   <meta name="author" content="Anish Khatri">
   <link rel="shortcut icon" href="https://anishkhatri.com/favicon.png">
   <meta property="og:image" content="./og.jpg">
+    <style>
+    .terminalak{animation-name:fadeOut;animation-duration:1ms;animation-fill-mode:forwards;animation-delay:10000ms}.terminalak > p{display:block;width:0;margin:auto;font-size:1.2rem;color:#20C20E;overflow:hidden;font-family:monospace;white-space:nowrap;animation-name:writeText;animation-duration:1000ms;animation-fill-mode:forwards}.terminalak > h1{text-align:center;opacity:0;color:#fff;font-family:sans-serif;animation-name:fadeIn;animation-duration:1000ms;animation-fill-mode:forwards;animation-delay:10100ms}.delay1{animation-delay:100ms}.delay2{animation-delay:1100ms}.delay3{animation-delay:2100ms}.delay4{animation-delay:3100ms}.delay5{animation-delay:4100ms}.delay6{animation-delay:5100ms}.delay7{animation-delay:6100ms}.delay8{animation-delay:7100ms}@keyframes writeText{from{width:0}to{width:320px}}@keyframes fadeOut{from{opacity:1}to{opacity:0}}@keyframes fadeIn{from{opacity:0}to{opacity:1}}#loader{width:100%;height:2px;background-color:#000;margin-bottom:100px}#loaded{height:2px;width:0;background-color:#20C20E;animation-name:load;animation-duration:3000ms;animation-fill-mode:forwards}@keyframes load{0%{width:0}50%{width:70%}70%{width:100%}80%{opacity:1}100%{width:100%;opacity:0}}
+  </style>
 </head>
 <body>
-<!-- partial:index.partial.html -->
+    <div id="preload" style="position:fixed;z-index: 9999;background: black;top: 0;left: 0;right: 0;bottom: 0;color: wheat;">
+    <div id="loader">
+      <div id="loaded"></div>
+    </div>
+    <div class="terminalak">
+      <p class="delay1">Initializing Device...</p>
+      <p class="delay2">Booting up os files...</p>
+      <p class="delay3">Logging in to root user....</p>
+      <p class="delay4">preparing desktop...</p>
+      <p class="delay5">waiting for server response...</p>
+      <p class="delay6">Done.</p>
+      <p class="delay7">please wait</p>
+      <p class="delay8">Nothing happened?<br>There might be some issue.<br>Contact info@whoisanish.me</p>
+    </div>
+  </div>
+  <link rel="stylesheet" href="./assets/css/style.css?ak">
 
 <div class="windows-layer">
   <div id="terminalapp" class="gedit-app ui-draggable ui-draggable-handle" style="width: 960px; inset: 33px auto auto 249px; height: 557px;display:none">
@@ -110,6 +127,9 @@
   if($(window).width() < 1000){
     alert("Please open this website in your PC or bigger screen device for better experience.");
   }
+   $(window).load(function() {
+    $('#preload').fadeOut('slow');
+  });
   </script>
 </body>
 </html>
