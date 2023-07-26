@@ -9,6 +9,8 @@ https://yoursquad13.github.io/whoisanish/
 
 ## Screenshots
 
+![Home Page]([image_url](https://yoursquad13.github.io/whoisanish/assets/Screenshot%202023-07-26%20at%2014.38.47.png)https://yoursquad13.github.io/whoisanish/assets/Screenshot%202023-07-26%20at%2014.38.47.png)
+
 
 
 
