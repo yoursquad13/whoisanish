@@ -8,9 +8,8 @@ Access the website demo from
 https://yoursquad13.github.io/whoisanish/
 
 ## Screenshots
-
 ![Home Page](https://yoursquad13.github.io/whoisanish/assets/Screenshot%202023-07-26%20at%2014.38.47.png)
 
+![Terminal](https://yoursquad13.github.io/whoisanish/assets/Screenshot%202023-07-26%20at%2014.40.12.png)
 
-
-
+![Chrome](https://yoursquad13.github.io/whoisanish/assets/Screenshot%202023-07-26%20at%2014.39.29.png)
