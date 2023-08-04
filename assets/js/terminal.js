@@ -1,6 +1,6 @@
 const initialSection = document.querySelector("#initial");
 
-const initialPrompt = '<span class="prompt">----(<span style="color:#4293dc;">anish@linux</span>)-[<span style="color:#c6c6c6;">~/WHOISanish</span>]</span><br><span style="color: #67deb2;font-size: bolder;">|--<span style="color:#408ed4;">$</span> </span><input type="text" id="userInput" placeholder="Type a command! \'Help\' to list usable commands" autofocus="" style="width:70%" autocomplete="off"><br><div class="systemOutput"></div>';
+const initialPrompt = '<span class="prompt">----(<span style="color:#4293dc;">anish@linux</span>)-[<span style="color:#c6c6c6;">~/WHOISanish</span>]</span><br><span style="color: #67deb2;font-size: bolder;">|--<span style="color:#408ed4;">$</span> </span><input type="text" id="userInput" placeholder="Type a command! \'Help\' to list usable commands" autofocus="" style="width:70%" autocomplete="off"><br><div class="systemOutput"></div><br><strong>Special commands</strong>: encrypt: <br>Example <i>encrypt "message" pass</i><br>decrypt: <br>Example <i>decrypt "encrypted code" pass</i>';
 initialSection.innerHTML = initialPrompt;
 
 let inputField = document.querySelector("#userInput");
