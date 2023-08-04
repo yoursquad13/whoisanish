@@ -10,9 +10,7 @@ let keepValue = inputField.value;
 
 var msg = 'encode "test" test';
 
-function encode(msg){
-    let inputString = msg;
-
+function encode(inputString){   
 // Find the positions of the first and last quotes
     let firstQuoteIndex = inputString.indexOf('"');
     let lastQuoteIndex = inputString.lastIndexOf('"');
