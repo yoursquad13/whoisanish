@@ -184,9 +184,13 @@ const eventListener = () => {
             inputField.removeAttribute("id");
             if(keepValue.toLowerCase() == "clear" || keepValue.toLowerCase() == "cls") initialSection.innerHTML = initialPrompt;
             else if(keepValue.substring(0, 6) == 'encode' || keepValue.substring(0, 6) == 'decode'){
-              let systemOutput = executeCommand(keepValue);
-              outputField[outputField.length - 1].innerHTML = systemOutput;
-              initialSection.innerHTML += "<br />" + initialPrompt;
+                encode(keepValue)
+                .then(returnedValue => {
+                    // Use the returned value in a subsequent part of your code
+                    let systemOutput = returnedValue; // Assign the value
+                    outputField[outputField.length - 1].innerHTML = systemOutput;
+                    initialSection.innerHTML += "<br />" + initialPrompt;
+                })
             } else {
                 let systemOutput = executeCommand(keepValue.split(' ')[0].toLowerCase());
                 outputField[outputField.length - 1].innerHTML = systemOutput;
@@ -212,8 +216,6 @@ const executeCommand = (userInput) => {
     if(userInput == "exit" || userInput == "quit"){
         window.parent.postMessage("closeTerminal", '*');
         return "Now, the Terminal will be closed.";
-    } else if(userInput.substring(0, 6) == "encode" || userInput.substring(0, 6) == "decode"){
-        return encode(userInput);
     } else if(terminalCommands.hasOwnProperty(userInput)){
         return terminalCommands[userInput];
     } else{
