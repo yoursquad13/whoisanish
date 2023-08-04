@@ -8,6 +8,8 @@ let outputField = document.querySelectorAll(".systemOutput");
 
 let keepValue = inputField.value;
 
+var msg = 'encode "test" test';
+
 function encode(msg){
     let inputString = msg;
 
