@@ -178,7 +178,11 @@ const eventListener = () => {
             inputField.setAttribute("value", keepValue);
             inputField.removeAttribute("id");
             if(keepValue.toLowerCase() == "clear" || keepValue.toLowerCase() == "cls") initialSection.innerHTML = initialPrompt;
-            else {
+            else if(keepValue.substring(0, 6) == 'encode' || keepValue.substring(0, 6) == 'decode'){
+              let systemOutput = executeCommand(keepValue);
+              outputField[outputField.length - 1].innerHTML = systemOutput;
+              initialSection.innerHTML += "<br />" + initialPrompt;
+            } else {
                 let systemOutput = executeCommand(keepValue.split(' ')[0].toLowerCase());
                 outputField[outputField.length - 1].innerHTML = systemOutput;
                 initialSection.innerHTML += "<br />" + initialPrompt;
