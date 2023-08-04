@@ -33,7 +33,7 @@ function encode(inputString){
       
       })
       .catch(error => {
-          console.log(error);
+          return error;
       });
 }
 
