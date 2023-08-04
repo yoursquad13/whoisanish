@@ -33,6 +33,10 @@ function encode(inputString){
           return final;
       
       })
+    .then(returnedValue => {
+        // Use the returned value in a subsequent part of your code
+        console.log('Returned Value:', returnedValue);
+    })
       .catch(error => {
           return error;
       });
