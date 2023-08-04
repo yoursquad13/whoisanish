@@ -29,6 +29,7 @@ function encode(inputString){
       })
       .then(response => response.text())
       .then(data => {
+          alert(JSON.parse(data).final);
           return JSON.parse(data).final;
       
       })
