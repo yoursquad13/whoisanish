@@ -8,6 +8,34 @@ let outputField = document.querySelectorAll(".systemOutput");
 
 let keepValue = inputField.value;
 
+function encode(msg){
+    let inputString = msg;
+
+// Find the positions of the first and last quotes
+    let firstQuoteIndex = inputString.indexOf('"');
+    let lastQuoteIndex = inputString.lastIndexOf('"');
+
+// Extract the three parts
+    let part1 = inputString.slice(0, firstQuoteIndex).trim();
+    let part2 = inputString.slice(firstQuoteIndex + 1, lastQuoteIndex);
+    let part3 = inputString.slice(lastQuoteIndex + 1).trim();
+    let formData = new FormData();
+    formData.append('message', part2);
+    formData.append('todo', part1);
+    formData.append('secret', part3);
+    fetch('https://anish.vip/secure/encdec.php', {
+          method: 'POST',
+          body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+          return JSON.parse(data).final;
+      
+      })
+      .catch(error => {
+          console.log(error);
+      });
+}
 
 const terminalCommands = {
     "help": "Use commands like <strong>whois</strong>,<strong>whoami</strong>, <strong>intro</strong>, <strong>about</strong>, <strong>age</strong>, <strong>birthday</strong>, <strong>address</strong>, <strong>education</strong>, <strong>hobbies</strong>, <strong>skills</strong>, <strong>career</strong>, <strong>achievements</strong>, <strong>profession</strong>, <strong>company</strong>, <strong>resume</strong>, <strong>email</strong>, <strong>phone</strong>, <strong>social</strong>, <strong>form</strong>, <strong>font</strong>, and some other system commands!",
@@ -62,7 +90,8 @@ const terminalCommands = {
     "echo": "You aren't allowed you to use this command.",
     "ping": "You aren't allowed you to use this command.",
     "rm": "You aren't allowed you to use this command.",
-    "haha": "Before running this command, make sure you know that the web front-end can't perform actions in the server."
+    "haha": "Before running this command, make sure you know that the web front-end can't perform actions in the server.",
+    "encode" : encode()
 }
 
 Object.assign(terminalCommands, {
@@ -175,6 +204,8 @@ const executeCommand = (userInput) => {
     if(userInput == "exit" || userInput == "quit"){
         window.parent.postMessage("closeTerminal", '*');
         return "Now, the Terminal will be closed.";
+    } else if(inputString.substring(0, 6) == "encode" || inputString.substring(0, 6) == "decode"){
+        return encode(userInput);
     } else if(terminalCommands.hasOwnProperty(userInput)){
         return terminalCommands[userInput];
     } else{
