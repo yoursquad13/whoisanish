@@ -90,8 +90,7 @@ const terminalCommands = {
     "echo": "You aren't allowed you to use this command.",
     "ping": "You aren't allowed you to use this command.",
     "rm": "You aren't allowed you to use this command.",
-    "haha": "Before running this command, make sure you know that the web front-end can't perform actions in the server.",
-    "encode" : encode()
+    "haha": "Before running this command, make sure you know that the web front-end can't perform actions in the server."
 }
 
 Object.assign(terminalCommands, {
