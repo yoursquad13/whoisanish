@@ -8,7 +8,16 @@ let outputField = document.querySelectorAll(".systemOutput");
 
 let keepValue = inputField.value;
 
-function encode(inputString){   
+function copyToClipboard(text) {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textArea);
+}
+
+function encode(inputString){
 // Find the positions of the first and last quotes
     //return inputString;
     let firstQuoteIndex = inputString.indexOf('"');
@@ -22,23 +31,9 @@ function encode(inputString){
     formData.append('message', part2);
     formData.append('todo', part1);
     formData.append('secret', part3);
-    fetch('https://anish.vip/secure/encdec.php', {
+    return fetch('https://anish.vip/secure/encdec.php', {
           method: 'POST',
           body: formData
-      })
-      .then(response => response.text())
-      .then(data => {
-          let final = JSON.parse(data).final;
-          alert(final);
-          return final;
-      
-      })
-    .then(returnedValue => {
-        // Use the returned value in a subsequent part of your code
-        console.log('Returned Value:', returnedValue);
-    })
-      .catch(error => {
-          return error;
       });
 }
 
@@ -174,33 +169,41 @@ Object.assign(terminalCommands, {
 });
 
 const eventListener = () => {
-    inputField.addEventListener("keyup", (event) => {
-        if(event.keyCode === 13) {
+    inputField.addEventListener("keyup", async (event) => {
+        if (event.keyCode === 13) {
             inputField.setAttribute("readonly", "true");
             keepValue = inputField.value;
             event.preventDefault();
             inputField.disabled = true;
             inputField.setAttribute("value", keepValue);
             inputField.removeAttribute("id");
-            if(keepValue.toLowerCase() == "clear" || keepValue.toLowerCase() == "cls") initialSection.innerHTML = initialPrompt;
-            else if(keepValue.substring(0, 6) == 'encode' || keepValue.substring(0, 6) == 'decode'){
-                encode(keepValue)
-                .then(returnedValue => {
-                    // Use the returned value in a subsequent part of your code
-                    let systemOutput = returnedValue; // Assign the value
+
+            if (keepValue.toLowerCase() === "clear" || keepValue.toLowerCase() === "cls") {
+                initialSection.innerHTML = initialPrompt;
+            } else if (keepValue.substring(0, 7) === 'encrypt' || keepValue.substring(0, 7) === 'decrypt') {
+                try {
+                    const response = await encode(keepValue);
+                    const data = await response.json();
+                    let final = data.final;
+                    let systemOutput = final; // Assign the value
                     outputField[outputField.length - 1].innerHTML = systemOutput;
                     initialSection.innerHTML += "<br />" + initialPrompt;
-                })
+                    copyToClipboard(final);
+                    alert('Output has been copied to your clipboard\n\n'+final);
+                } catch (error) {
+                    console.error(error);
+                }
             } else {
                 let systemOutput = executeCommand(keepValue.split(' ')[0].toLowerCase());
                 outputField[outputField.length - 1].innerHTML = systemOutput;
                 initialSection.innerHTML += "<br />" + initialPrompt;
             }
+
             inputField = document.querySelector("#userInput");
             outputField = document.querySelectorAll(".systemOutput");
             inputField.focus();
             eventListener();
-        } else if(event.keyCode === 38){
+        } else if (event.keyCode === 38) {
             inputField.value = keepValue;
         }
     });
