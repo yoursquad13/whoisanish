@@ -8,10 +8,9 @@ let outputField = document.querySelectorAll(".systemOutput");
 
 let keepValue = inputField.value;
 
-var msg = 'encode "test" test';
-
 function encode(inputString){   
 // Find the positions of the first and last quotes
+    return inputString;
     let firstQuoteIndex = inputString.indexOf('"');
     let lastQuoteIndex = inputString.lastIndexOf('"');
 
