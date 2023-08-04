@@ -10,7 +10,7 @@ let keepValue = inputField.value;
 
 function encode(inputString){   
 // Find the positions of the first and last quotes
-    return inputString;
+    //return inputString;
     let firstQuoteIndex = inputString.indexOf('"');
     let lastQuoteIndex = inputString.lastIndexOf('"');
 
@@ -28,8 +28,9 @@ function encode(inputString){
       })
       .then(response => response.text())
       .then(data => {
-          alert(JSON.parse(data).final);
-          return JSON.parse(data).final;
+          let final = JSON.parse(data).final;
+          alert(final);
+          return final;
       
       })
       .catch(error => {
