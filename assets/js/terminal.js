@@ -203,7 +203,7 @@ const executeCommand = (userInput) => {
     if(userInput == "exit" || userInput == "quit"){
         window.parent.postMessage("closeTerminal", '*');
         return "Now, the Terminal will be closed.";
-    } else if(inputString.substring(0, 6) == "encode" || inputString.substring(0, 6) == "decode"){
+    } else if(userInput.substring(0, 6) == "encode" || userInput.substring(0, 6) == "decode"){
         return encode(userInput);
     } else if(terminalCommands.hasOwnProperty(userInput)){
         return terminalCommands[userInput];
